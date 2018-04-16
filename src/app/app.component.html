@@ -1,20 +1,109 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container-fluid" id="main">
+  <!-- <div class="row"> -->
+    <div id="mySidenav" class="sidenav">
+      <a class="closebtn" (click)="closeNav()" style="cursor: pointer;">&times;</a>
+      <a class="pl-0" href="http://www.vnmn.ac.vn/"> 
+        <!-- <img id="MDB-logo" src="https://d30y9cdsu7xlg0.cloudfront.net/png/3129-200.png" style="width: 25px; color: white" alt="Bảo tàng thiên nhiên Việt Nam"> -->
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        Bảo tàng
+    </a> 
+        <div class="panel-search">
+            <a class="" data-toggle="collapse" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                Tìm kiếm theo địa điểm
+            </a>
+        </div>
+        <div class="collapse" id="collapse1">
+            <form (click)="searchSample()">
+                <input type="text" placeholder="Tìm kiếm" name="" [(ngModel)]="tenVietNam" class="input-form-search">
+            </form>
+        </div>
 
+        <div class="panel-search">
+            <a class="" data-toggle="collapse" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                Tìm kiếm theo tên di sản
+            </a>
+        </div>
+        <div class="collapse" id="collapse2">
+            <form (click)="searchSample()">
+                <input type="text" placeholder="Nhập địa điểm" name="" [(ngModel)]="tenVietNam" class="input-form-search">
+            </form>
+        </div>
+
+        <div class="panel-search">
+            <a class="" data-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                Vẽ Polygon
+            </a>
+        </div>
+        <div class="collapse" id="collapse3">
+            <form (click)="searchSample()">
+                <input type="text" placeholder="Nhập tên" name="" [(ngModel)]="tenVietNam" class="input-form-search">
+            </form>
+        </div>
+    </div>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2d4c93;">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" style="cursor: pointer; color: white;" (click)="openNav()"> &#9776;</a>
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trang chủ
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="btn-group">
+                    <a class=" nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Chức năng</a>             
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Test dropdown</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Test dropdown</a>
+                    </div>
+                </li>
+            </ul>
+            <!-- Links -->
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="text" placeholder="Nhập nội dung..." aria-label="Search">
+            </form>
+        </div>
+        <!-- Collapsible content -->
+    </nav>
+    <div class=" conatainr mt-5" style="padding: 0px 15px; min-height: 500px;">
+        <div class="row">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <!--Main Layout-->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12  btn-success" style="padding: 10px 10px 0px 10px;" id="menuBottom">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a style="color:#fff;margin-right:10px;" href="BTTNVN.vn/page/thu-ngo-9">Hợp tác quốc tế</a></li>
+                    <li class="list-inline-item"><a style="color:#fff;margin-right:10px;" href="BTTNVN.vn/page/gioi-thieu-3">Giới thiệu</a></li>
+                    <li class="list-inline-item"><a style="color:#fff;margin-right:10px;" href="BTTNVN.vn/lien-he">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-12" style="background: #fff;">
+                <div class="col-lg-6" style="background: #fff; padding: 10px;" id="info_company">
+                    <b><br>Phòng Bảo tồn</b>
+                    <br>Địa chỉ:
+                    <br>Điện thoại:
+                    <br>Email:
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="div-gpt-ad" style="width:1px;height:1px"></div>
+  <!-- </div> -->
+<div>
