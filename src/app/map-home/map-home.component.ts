@@ -26,6 +26,7 @@ import { MapViewComponent } from '../map-view/map-view.component';
 export class MapHomeComponent implements OnInit {
   naturalParks$: Observable<any[]>;
   private searchTerms = new Subject<string>();
+  options: any;
 
   @ViewChild(MapViewComponent)
   private mapComponent: MapViewComponent;
@@ -45,6 +46,13 @@ export class MapHomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.options = {
+      layers: [
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
+      ],
+      zoom: 5,
+      center: L.latLng(46.879966, -121.726909)
+    };
     this.regionConfig = this.mapInfoService.getRegion();
     console.log(this.regionConfig);
     this.mapInfoService.getProvinces().subscribe(data => {

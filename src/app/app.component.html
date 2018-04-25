@@ -2,11 +2,11 @@
   <!-- <div class="row"> -->
     <div id="mySidenav" class="sidenav">
       <a class="closebtn" (click)="closeNav()" style="cursor: pointer;">&times;</a>
-      <a class="pl-0" href="http://www.vnmn.ac.vn/"> 
+      <a class="pl-0" href="http://www.vnmn.ac.vn/">
         <!-- <img id="MDB-logo" src="https://d30y9cdsu7xlg0.cloudfront.net/png/3129-200.png" style="width: 25px; color: white" alt="Bảo tàng thiên nhiên Việt Nam"> -->
         <i class="fa fa-cog" aria-hidden="true"></i>
         Bảo tàng
-    </a> 
+    </a>
         <div class="panel-search">
             <a class="" data-toggle="collapse" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
                 Tìm kiếm theo địa điểm
@@ -63,7 +63,7 @@
 
                 <!-- Dropdown -->
                 <li class="btn-group">
-                    <a class=" nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Chức năng</a>             
+                    <a class=" nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Chức năng</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Test dropdown</a>
                         <div class="dropdown-divider"></div>
@@ -78,9 +78,9 @@
         </div>
         <!-- Collapsible content -->
     </nav>
-    <div class=" conatainr mt-5" style="padding: 0px 15px; min-height: 500px;">
+    <div class="conatainer" style="padding: 15px 15px; min-height: 500px;">
         <div class="row">
-            <router-outlet></router-outlet>
+                <app-map-home style="width: 100% !important;"></app-map-home>
         </div>
     </div>
     <!--Main Layout-->
